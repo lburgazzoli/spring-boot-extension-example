@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+      http://maven.apache.org/POM/4.0.0 
+      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.github.lburgazzoli</groupId>
+  <artifactId>spring-boot-extension-example</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>spring-boot-extension-example</name>
+  <packaging>pom</packaging>
+
+  <properties>    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <version.spring.boot>1.5.7.RELEASE</version.spring.boot>
+    <version.maven.compiler.plugin>3.7.0</version.maven.compiler.plugin>
+    <version.camel>2.20.0</version.camel>
+
+    <version.java>1.8</version.java>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+        <version>${version.spring.boot}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+        <version>${version.spring.boot}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.camel</groupId>
+        <artifactId>camel-spring-boot-starter</artifactId>
+        <version>${version.camel}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven.compiler.plugin}</version>
+          <configuration>
+            <source>${version.java}</source>
+            <target>${version.java}</target>
+            <encoding>UTF-8</encoding>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-maven-plugin</artifactId>
+          <version>${version.spring.boot}</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+
+
+
+  <modules>
+    <module>spring-boot-application</module>
+    <module>spring-boot-application-extension-boot</module>
+    <module>spring-boot-application-extension-xml</module>
+  </modules>
+
+</project>

@@ -1,0 +1,6 @@
+<routes xmlns="http://camel.apache.org/schema/spring">
+  <route>
+    <from uri="timer:xml-extension"/>
+    <log message="Extension route (xml)"/>
+  </route>
+</routes>
