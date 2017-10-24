@@ -60,6 +60,7 @@
         <configuration>
           <executable>java</executable>
           <arguments>
+            <argument>-Dloader.home=${extension.root.path}</argument>
             <argument>-jar</argument>
             <argument>${project.build.directory}/${project.artifactId}-${project.version}.jar</argument>
           </arguments>

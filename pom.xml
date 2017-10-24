@@ -20,7 +20,7 @@
     <version.maven.dependency.plugin>3.0.2</version.maven.dependency.plugin>
     <version.maven.exec.plugin>1.6.0</version.maven.exec.plugin>
     <version.maven.clean.plugin>3.0.0</version.maven.clean.plugin>
-
+    <version.directory.maven.plugin>0.2</version.directory.maven.plugin>
     <version.camel>2.20.0</version.camel>
     <version.java>1.8</version.java>
   </properties>
@@ -88,16 +88,21 @@
 
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-clean-plugin</artifactId>
-        <version>${version.maven.clean.plugin}</version>
-        <configuration>
-          <filesets>
-            <fileset>
-              <directory>extensions</directory>
-            </fileset>
-          </filesets>
-        </configuration>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>directory-maven-plugin</artifactId>
+        <version>${version.directory.maven.plugin}</version>
+        <executions>
+          <execution>
+            <id>directories</id>
+            <goals>
+              <goal>highest-basedir</goal>
+            </goals>
+            <phase>initialize</phase>
+            <configuration>
+              <property>extension.root.path</property>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
