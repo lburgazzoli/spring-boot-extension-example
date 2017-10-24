@@ -1,0 +1,9 @@
+= spring-boot-extension-example
+
+Run with:
+
+[source,bash]
+----
+$ mvn clean install
+$ mvn -pl spring-boot-application exec:exec
+----

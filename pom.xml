@@ -17,8 +17,11 @@
 
     <version.spring.boot>1.5.7.RELEASE</version.spring.boot>
     <version.maven.compiler.plugin>3.7.0</version.maven.compiler.plugin>
-    <version.camel>2.20.0</version.camel>
+    <version.maven.dependency.plugin>3.0.2</version.maven.dependency.plugin>
+    <version.maven.exec.plugin>1.6.0</version.maven.exec.plugin>
+    <version.maven.clean.plugin>3.0.0</version.maven.clean.plugin>
 
+    <version.camel>2.20.0</version.camel>
     <version.java>1.8</version.java>
   </properties>
 
@@ -61,17 +64,62 @@
           <artifactId>spring-boot-maven-plugin</artifactId>
           <version>${version.spring.boot}</version>
         </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>${version.maven.dependency.plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${version.maven.exec.plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>${version.maven.clean.plugin}</version>
+        </plugin>
+
       </plugins>
     </pluginManagement>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${version.maven.clean.plugin}</version>
+        <configuration>
+          <filesets>
+            <fileset>
+              <directory>extensions</directory>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
-
-
 
   <modules>
     <module>spring-boot-application-extension-layout</module>
-    <module>spring-boot-application</module>
     <module>spring-boot-application-extension-boot</module>
     <module>spring-boot-application-extension-xml</module>
+    <module>spring-boot-application</module>
   </modules>
+
+  <profiles>
+    <profile>
+      <id>run</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
