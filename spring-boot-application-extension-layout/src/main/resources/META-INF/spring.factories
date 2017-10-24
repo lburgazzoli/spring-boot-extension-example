@@ -1,0 +1,2 @@
+org.springframework.boot.loader.tools.LayoutFactory=\
+com.github.lburgazzoli.application.extension.tools.ExtensionLayoutFactory

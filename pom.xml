@@ -68,6 +68,7 @@
 
 
   <modules>
+    <module>spring-boot-application-extension-layout</module>
     <module>spring-boot-application</module>
     <module>spring-boot-application-extension-boot</module>
     <module>spring-boot-application-extension-xml</module>

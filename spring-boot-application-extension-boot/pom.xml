@@ -12,6 +12,8 @@
   <artifactId>spring-boot-application-extension-boot</artifactId>
   <packaging>jar</packaging>
 
+
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -22,6 +24,25 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-spring-boot-starter</artifactId>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core</artifactId>
+      <version>${version.camel}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-core-starter</artifactId>
+      <version>${version.camel}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.camel</groupId>
+      <artifactId>camel-http4-starter</artifactId>
+      <version>${version.camel}</version>
     </dependency>
   </dependencies>
 
@@ -37,7 +58,8 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <layout>MODULE</layout>
+          <layoutFactory implementation="com.github.lburgazzoli.application.extension.tools.ExtensionLayoutFactory"/>
+          <excludeGroupIds>com.sun.xml.bind</excludeGroupIds>
         </configuration>
         <executions>
           <execution>
@@ -46,6 +68,13 @@
             </goals>
           </execution>
         </executions>
+        <dependencies>
+          <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>spring-boot-application-extension-layout</artifactId>
+            <version>${project.version}</version>
+          </dependency>
+        </dependencies>
       </plugin>
     </plugins>
   </build>

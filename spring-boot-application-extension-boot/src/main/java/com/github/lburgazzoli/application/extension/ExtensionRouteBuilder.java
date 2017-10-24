@@ -8,6 +8,7 @@ public class ExtensionRouteBuilder extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("timer:boot-extension")
-            .log("Extension route (boot)");
+            .to("http4://www.google.com")
+            .to("log:com.github.lburgazzoli.application.extension.boot?level=INFO&showAll=true");
     }
 }
