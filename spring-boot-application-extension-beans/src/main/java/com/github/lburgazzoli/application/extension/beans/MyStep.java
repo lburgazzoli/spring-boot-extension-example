@@ -17,6 +17,7 @@ public class MyStep implements SyndesisStepExtension {
         this.something = something;
     }
 
+    @Override
     public ProcessorDefinition configure(CamelContext context, ProcessorDefinition definition, Map<String, Object> parameters) {
         return definition.log("Something is set to <" + something + ">, parameters are: " + parameters);
     }
