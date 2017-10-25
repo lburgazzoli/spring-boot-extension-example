@@ -3,4 +3,14 @@
     <from uri="timer:xml-extension"/>
     <log message="Extension route (xml)"/>
   </route>
+
+  <route>
+    <from uri="direct:a/b"/>
+    <setHeader headerName="XmlRoute">
+      <constant>
+        MyXmlRouteHeader
+      </constant>
+    </setHeader>
+    <to uri="log:com.github.lburgazzoli.application.extension.xml?level=INFO&amp;showAll=true&amp;multiline=false"/>
+  </route>
 </routes>

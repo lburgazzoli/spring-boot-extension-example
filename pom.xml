@@ -113,6 +113,7 @@
     <module>spring-boot-application-extension-boot</module>
     <module>spring-boot-application-extension-xml</module>
     <module>spring-boot-application-extension-flow</module>
+    <module>spring-boot-application-extension-beans</module>
     <module>spring-boot-application</module>
   </modules>
 
