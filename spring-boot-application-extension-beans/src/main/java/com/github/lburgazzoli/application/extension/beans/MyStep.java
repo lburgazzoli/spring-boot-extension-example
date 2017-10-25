@@ -2,7 +2,7 @@ package com.github.lburgazzoli.application.extension.beans;
 
 import java.util.Map;
 
-import io.syndesis.integration.runtime.SyndesisStepExtension;
+import io.syndesis.integration.runtime.api.SyndesisStepExtension;
 import org.apache.camel.CamelContext;
 import org.apache.camel.model.ProcessorDefinition;
 

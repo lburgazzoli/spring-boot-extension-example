@@ -25,7 +25,7 @@
     </dependency>
     <dependency>
       <groupId>io.syndesis.integration-runtime</groupId>
-      <artifactId>runtime</artifactId>
+      <artifactId>runtime-api</artifactId>
       <version>${version.syndesis.integration.runtime}</version>
       <scope>provided</scope>
     </dependency>

@@ -3,21 +3,19 @@ flows:
 - steps:
   - kind: "endpoint"
     uri: "timer:syndesis?period=2s"
-  - kind: "extension"
-    type: "ENDPOINT"
-    target: "direct:a/b"
-    properties:
+  - kind: "setHeaders"
+    headers:
       ExtensionMessage: "Hello from Syndesis"
-  - kind: "extension"
-    type: "CLASS"
-    target: "com.github.lburgazzoli.application.extension.beans.MyExtension"
+  - kind: "endpoint"
+    uri: "direct:a/b"
+  - kind: "function"
+    name: "com.github.lburgazzoli.application.extension.beans.MyExtension"
     properties:
       subject: "Syndesis"
   - kind: "log"
     message: "Got ${body}, header1=${header.XmlRoute}, header1=${header.ExtensionMessage}"
   - kind: "extension"
-    type: "STEP"
-    target: "com.github.lburgazzoli.application.extension.beans.MyStep"
+    name: "com.github.lburgazzoli.application.extension.beans.MyStep"
     properties:
       something: "ThisIsSomething"
       key1: "val1"
