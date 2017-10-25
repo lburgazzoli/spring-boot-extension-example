@@ -1,0 +1,7 @@
+---
+flows:
+- steps:
+  - kind: "endpoint"
+    uri: "timer:syndesis?period=2s"
+  - kind: "log"
+    message: "Extension route (sydnesis)"

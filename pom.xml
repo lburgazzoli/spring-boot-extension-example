@@ -22,6 +22,7 @@
     <version.maven.clean.plugin>3.0.0</version.maven.clean.plugin>
     <version.directory.maven.plugin>0.2</version.directory.maven.plugin>
     <version.camel>2.20.0</version.camel>
+    <version.syndesis.integration.runtime>1.1-SNAPSHOT</version.syndesis.integration.runtime>
     <version.java>1.8</version.java>
   </properties>
 
@@ -111,6 +112,7 @@
     <module>spring-boot-application-extension-layout</module>
     <module>spring-boot-application-extension-boot</module>
     <module>spring-boot-application-extension-xml</module>
+    <module>spring-boot-application-extension-flow</module>
     <module>spring-boot-application</module>
   </modules>
 

@@ -5,5 +5,6 @@ Run with:
 [source,bash]
 ----
 $ mvn clean install
-$ mvn -pl spring-boot-application exec:exec
+$ mvn -pl spring-boot-application clean install exec:exec
 ----
+
