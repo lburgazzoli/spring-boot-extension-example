@@ -56,11 +56,11 @@
       <version>${version.camel}</version>
       <scope>provided</scope>
     </dependency>
-
     <dependency>
       <groupId>io.syndesis.integration-runtime</groupId>
       <artifactId>runtime</artifactId>
       <version>${version.syndesis.integration.runtime}</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 

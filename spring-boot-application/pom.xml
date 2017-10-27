@@ -21,6 +21,11 @@
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-spring-boot-starter</artifactId>
     </dependency>
+    <dependency>
+      <groupId>io.syndesis.integration-runtime</groupId>
+      <artifactId>runtime</artifactId>
+      <version>${version.syndesis.integration.runtime}</version>
+    </dependency>
   </dependencies>
 
 
